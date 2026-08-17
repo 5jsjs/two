@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+# Minimal gradlew placeholder. If the Gradle wrapper jar is not present, run 'gradle wrapper' locally in this directory
+# or use Android Studio to generate the wrapper. This script then delegates to ./gradlew.
+if [ -f "./gradle/wrapper/gradle-wrapper.jar" ]; then
+  exec java -jar "./gradle/wrapper/gradle-wrapper.jar" "$@"
+else
+  echo "Gradle wrapper not found. Run 'gradle wrapper' in this folder or use Android Studio to generate the wrapper."
+  exit 1
+fi

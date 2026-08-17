@@ -1,0 +1,38 @@
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withInputStream { localProperties.load(it) }
+}
+
+apply plugin: 'com.android.application'
+
+// The Flutter SDK path is loaded from local.properties by the `flutter.gradle` script below
+def flutterRoot = localProperties.getProperty('flutter.sdk')
+if (flutterRoot == null) {
+    throw new GradleException("Flutter SDK not found. Define flutter.sdk in local.properties.")
+}
+
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+
+android {
+    compileSdkVersion 33
+    namespace "com.streamlitwrapper.streamlit_wrapper"
+
+    defaultConfig {
+        applicationId "com.streamlitwrapper.streamlit_wrapper"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            // Use debug signing for quick test builds; replace with real signingConfig for production
+            signingConfig signingConfigs.debug
+        }
+    }
+}
+
+dependencies {
+}

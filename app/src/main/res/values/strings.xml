@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Streamlit外壳</string>
+    <string name="hint_server_url">例如 http://192.168.1.100:8501</string>
+    <string name="title_settings">后端服务设置</string>
+    <string name="btn_save">保存</string>
+    <string name="btn_open_settings">设置服务地址</string>
+    <string name="msg_empty_url">请填写Streamlit服务地址</string>
+</resources>

@@ -1,0 +1,2 @@
+rootProject.name = 'streamlit_wrapper'
+include ':app'
